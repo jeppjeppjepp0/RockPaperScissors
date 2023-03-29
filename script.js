@@ -1,27 +1,39 @@
 var wins = 0;
 var loss = 0;
 var ties = 0;
-var RPS = ["R","P","S"]
+var RPS = ["R","P","S"];
 
 function playRPS() {
     var playerResponse = prompt("Enter Rock (R), Paper (P), or Scissors (S)");
-    var randomResponse = RPS[Math.floor(Math.random() * RPS.length)]
+    var randomResponse = RPS[Math.floor(Math.random() * RPS.length)];
 
-    if playRPS()= randomeResponse {
-        alert("Tie!") {
-            
-        }
+    alert("The computer chose: " + randomResponse + "!");
 
+    if (playerResponse === randomResponse) {
+        alert("Tie!");
+        ties++;
     }
-};
+    else if (playerResponse === "R" && randomResponse === "S" ||
+             playerResponse === "P" && randomResponse === "R" ||
+             playerResponse === "S" && randomResponse === "P"){
+        alert("Win!");
+        wins++;
+    }
+    else {
+        alert("Loss :(");
+        loss++;
+    }
+
+    alert("wins: " + wins + "\nlosses: " + loss + "\nties: " + ties);
+}
 
 /* 
 if press play, play
 prompt window: enter R, P, or S
--generates random response
+generates random response
 compare response and computer random
 alert WLT
 count win, loss, tie
-display all WLT
+-display all WLT
 confirm if user plays again
 */
