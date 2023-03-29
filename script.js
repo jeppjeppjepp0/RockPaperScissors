@@ -25,7 +25,13 @@ function playRPS() {
     }
 
     alert("wins: " + wins + "\nlosses: " + loss + "\nties: " + ties);
-}
+
+    if (confirm("Do you want to play again?") == true) {
+        playRPS(); 
+      } else {
+        alert("Good playing!");
+      }
+    }
 
 /* 
 if press play, play
